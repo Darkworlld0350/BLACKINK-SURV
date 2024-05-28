@@ -1,0 +1,36 @@
+extends layout
+
+block body
+  // Barra de Navegación (Navbar)
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    a.navbar-brand(href='#') Mi Sitio
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item.active
+          a.nav-link(href='#') Inicio
+        li.nav-item
+          a.nav-link(href='#') Acerca de
+        li.nav-item
+          a.nav-link(href='#') Servicios
+        li.nav-item
+          a.nav-link(href='#') Contacto
+
+  // Botones
+  button.btn.btn-primary(type='button') Botón Primario
+  button.btn.btn-secondary(type='button') Botón Secundario
+  button.btn.btn-success(type='button') Botón de Éxito
+  button.btn.btn-danger(type='button') Botón de Peligro
+  button.btn.btn-warning(type='button') Botón de Advertencia
+  button.btn.btn-info(type='button') Botón de Información
+  button.btn.btn-light(type='button') Botón Ligero
+  button.btn.btn-dark(type='button') Botón Oscuro
+
+  // Tarjetas (Cards)
+  .card(style='width: 18rem;')
+    img.card-img-top(src='...', alt='...')
+    .card-body
+      h5.card-title Título de la Tarjeta
+      p.card-text Texto de ejemplo para la tarjeta.
+      a.btn.btn-primary(href='#') Ir a algún lugar

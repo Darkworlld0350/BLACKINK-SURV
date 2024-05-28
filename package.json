@@ -4,7 +4,9 @@
   "description": "front-end de mi pagina web",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass style/sass/style.sass:public/css/styles.css",
+    "sass-watch": "sass --watch style/sass/style.sass:public/css/styles.css",
+    "start": "concurrently \"npm run sass-watch\" \"nodemon server.js\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/Darkworlld0350/BLACKINK-SURV/issues"
   },
-  "homepage": "https://github.com/Darkworlld0350/BLACKINK-SURV#readme"
+  "homepage": "https://github.com/Darkworlld0350/BLACKINK-SURV#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "concurrently": "^8.2.2",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.1",
+    "sass": "^1.77.2"
+  }
 }
