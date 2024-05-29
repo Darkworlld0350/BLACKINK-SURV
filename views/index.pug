@@ -2,36 +2,32 @@ extends layout
 
 block content
   // Barra de Navegación (Navbar)
-  nav.navbar.navbar-expand-lg.navbar-light.bg-light
-    a.navbar-brand(href='#') Mi Sitio
-    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-      span.navbar-toggler-icon
-    #navbarSupportedContent.collapse.navbar-collapse
-      ul.navbar-nav.mr-auto
-        li.nav-item.active
-          a.nav-link(href='#') Inicio
-        li.nav-item
-          a.nav-link(href='#') Acerca de
-        li.nav-item
-          a.nav-link(href='#') Servicios
-        li.nav-item
-          a.nav-link(href='#') Contacto
-
-  // Botones
-  button.btn.btn-primary(type='button') Botón Primario
-  button.btn.btn-secondary(type='button') Botón Secundario
-  button.btn.btn-success(type='button') Botón de Éxito
-  button.btn.btn-danger(type='button') Botón de Peligro
-  button.btn.btn-warning(type='button') Botón de Advertencia
-  button.btn.btn-info(type='button') Botón de Información
-  button.btn.btn-light(type='button') Botón Ligero
-  button.btn.btn-dark(type='button') Botón Oscuro
-
-  // Tarjetas (Cards)
-  .card(style='width: 18rem;')
-    img.card-img-top(src='...', alt='...')
-    .card-body
-      h5.card-title Título de la Tarjeta
-      p.card-text Texto de ejemplo para la tarjeta.
-      a.btn.btn-primary(href='#') Ir a algún lugar
-
+  nav.navbar.navbar-expand-lg.bg-body-tertiary
+    .container-fluid
+      a.navbar-brand(href="#") Navbar
+      button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse(id="navbarSupportedContent")
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item
+            a(class="nav-link active" aria-current="page" href="#") Home
+          li.nav-item
+            a.nav-link(href="#") Link
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false") Dropdown
+            ul.dropdown-menu
+              li
+                a.dropdown-item(href="#") Action
+              li
+                a.dropdown-item(href="#") Another action
+              li
+                hr.dropdown-divider
+              li
+                a.dropdown-item(href="#") Something else here
+          li.nav-item
+            a.nav-link.disabled(aria-disabled="true") Disabled
+        form.d-flex(role="search")
+          input.form-control.me-2(type="search" placeholder="Search" aria-label="Search")
+          form.d-flex(role="search")
+          button.btn.btn-outline-success(type="submit" style="margin-right: 1rem") Search
+          a.btn.btn-outline-success(href="signin") Signin

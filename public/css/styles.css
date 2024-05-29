@@ -11905,9 +11905,9 @@ html body {
 
 body {
   font-family: Arial, sans-serif;
-  background: #59C173;
-  background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173);
-  background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173);
+  background: #360033;
+  background: -webkit-linear-gradient(to right, #0b8793, #360033);
+  background: linear-gradient(to right, #0b8793, #360033);
 }
 
 .bd-placeholder-img {
@@ -12025,6 +12025,28 @@ body {
   }
   .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
+  }
+  .modal-content {
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+  }
+  button.btn.btn-primary.w-100.py-2 {
+    margin-top: 1em;
+  }
+  h1.h3.mb-3.fw-normal, .h3.mb-3.fw-normal.h1 {
+    text-align: center;
+    font-family: fantasy;
+    color: white;
+  }
+  h1.h3.mb-3.fw-normal2, .h3.mb-3.fw-normal2.h1 {
+    text-align: center;
+    font-family: fantasy;
+    color: black;
+  }
+  .mb-4 {
+    display: block;
+    margin: 0 auto;
   }
 }
 
