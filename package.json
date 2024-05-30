@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/Darkworlld0350/BLACKINK-SURV#readme",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "bootstrap": "^5.3.3",
     "concurrently": "^8.2.2",
     "express": "^4.19.2",
+    "morgan": "^1.10.0",
     "nodemon": "^3.1.1",
     "sass": "^1.77.2"
   }

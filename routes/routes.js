@@ -5,10 +5,10 @@ const index = require('./index');
 const boostrap = require('./boostrap');
 
 const signin = require('./signin');
-const signup = require('./signup');
+const navbar = require('./navbar');
 
 router.use('/', index);
 router.use('/boostrap', boostrap);
 router.use('/signin', signin);
-router.use('/signup', signup);
+router.use('/navbar', navbar);
 module.exports = router;

@@ -1,33 +1,53 @@
-extends layout
+include navbar.pug
 
 block content
-  // Barra de Navegación (Navbar)
-  nav.navbar.navbar-expand-lg.bg-body-tertiary
-    .container-fluid
-      a.navbar-brand(href="#") Navbar
-      button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
-        span.navbar-toggler-icon
-      .collapse.navbar-collapse(id="navbarSupportedContent")
-        ul.navbar-nav.me-auto.mb-2.mb-lg-0
-          li.nav-item
-            a(class="nav-link active" aria-current="page" href="#") Home
-          li.nav-item
-            a.nav-link(href="#") Link
-          li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false") Dropdown
-            ul.dropdown-menu
-              li
-                a.dropdown-item(href="#") Action
-              li
-                a.dropdown-item(href="#") Another action
-              li
-                hr.dropdown-divider
-              li
-                a.dropdown-item(href="#") Something else here
-          li.nav-item
-            a.nav-link.disabled(aria-disabled="true") Disabled
-        form.d-flex(role="search")
-          input.form-control.me-2(type="search" placeholder="Search" aria-label="Search")
-          form.d-flex(role="search")
-          button.btn.btn-outline-success(type="submit" style="margin-right: 1rem") Search
-          a.btn.btn-outline-success(href="signin") Signin
+  // Contenido de la Encuesta
+
+  h1 Encuesta de satisfacción del cliente
+
+  form(action="/submit-survey" method="post" class="survey-form")
+
+    h2 ¿Cuál es tu color favorito?
+    label.radio-label
+      input(type="radio" name="favorite_color" value="red" required)
+      | Rojo
+    br
+    label.radio-label
+      input(type="radio" name="favorite_color" value="blue" required)
+      | Azul
+    br
+    label.radio-label
+      input(type="radio" name="favorite_color" value="green" required)
+      | Verde
+    br
+    label.radio-label
+      input(type="radio" name="favorite_color" value="yellow" required)
+      | Amarillo
+    br
+
+    h2 ¿Cuán satisfecho estás con nuestro servicio?
+    table.likert-table
+      tr
+        th.likert-header Muy insatisfecho
+        th.likert-header Insatisfecho
+        th.likert-header Neutral
+        th.likert-header Satisfecho
+        th.likert-header Muy satisfecho
+      tr
+        td
+          input(type="radio" name="satisfaction" value="1" required aria-label="Muy insatisfecho")
+        td
+          input(type="radio" name="satisfaction" value="2" required aria-label="Insatisfecho")
+        td
+          input(type="radio" name="satisfaction" value="3" required aria-label="Neutral")
+        td
+          input(type="radio" name="satisfaction" value="4" required aria-label="Satisfecho")
+        td
+          input(type="radio" name="satisfaction" value="5" required aria-label="Muy satisfecho")
+    br
+
+    h2 ¿Cuál es tu opinión sobre nuestro servicio?
+    textarea(name="opinion" rows="5" cols="40" placeholder="Escribe tu opinión aquí" class="textarea-opinion")
+    br
+
+    input(type="submit" value="Enviar" class="submit-button")

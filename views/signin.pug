@@ -13,7 +13,7 @@ block content
         path(d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z")
         svg.bi.my-1.theme-icon-active(width="1em", height="1em")
         use(href="#circle-half")
-    main.form-signin.w-100.m-auto
+    main.form-signin-one.w-100.m-auto
         form
         img.mb-4(src="https://c0.klipartz.com/pngpicture/3/235/gratis-png-los-iconos-de-la-computadora-comparten-iconos-compartiendo-el-servicio-de-redes-sociales-world-wide-web.png", alt="", width="72", height="57")
         h1.h3.mb-3.fw-normal Please Sign In
@@ -27,7 +27,9 @@ block content
             input.form-check-input(type="checkbox", value="remember-me", id="flexCheckDefault")
             label.form-check-label(for="flexCheckDefault") Remember me
         button.btn.btn-primary.w-100.py-2(type="submit ") SIGN IN
-        button.btn.btn-primary.w-100.py-2(type="submit" style="margin-top: 1rem", data-bs-target='#exampleModal', , data-bs-toggle='modal') SIGN UP
+        h2.h3.mb-3.fw-normal "Dont have an account ?"
+        button.btn.btn-primary.w-100.py-2(type="submit" style="margin-top: -.4rem", data-bs-target='#exampleModal', , data-bs-toggle='modal') SIGN UP
+
 
     // Modal
     div.modal.fade(id='exampleModal', tabindex='-1', aria-labelledby='exampleModalLabel', aria-hidden='true')
@@ -52,7 +54,6 @@ block content
                     div.form-floating
                         input.form-control(type="password", id="floatingInput", placeholder="name@example.com")
                         label(for="floatingInput") Confirm password
-                    button.btn.btn-primary.w-100.py-2(type="submit ") SIGN UP 
+                    button.btn.btn-primary.w-100.py-2(type="submit" style="margin-top: 5%") SIGN UP 
     script(src="../assets/dist/js/bootstrap.bundle.min.js")
-
 
