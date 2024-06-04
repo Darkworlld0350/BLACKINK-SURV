@@ -1,53 +1,90 @@
-include navbar.pug
+extends layout
 
 block content
-  // Contenido de la Encuesta
+  // Header
+  header.masthead.text-center.text-white
+    .masthead-content
+      .container.px-5(id="headerCustomID")
+        h1.masthead-heading.mb-0 YOUR FAVORITE WEBSITE
+        h2.masthead-subheading.mb-0 to create surveys
+        if user
+          a.btn.btn-primary.btn1.-pill.mt-5(href='/encuesta') Get started
+          a.btn.btn-primary.btn2.-pill.mt-5(href='#scroll') Learn More
+        else 
+          a.btn.btn-primary.btn1.-pill.mt-5(href='/login') Get started
+          a.btn.btn-primary.btn2.-pill.mt-5(href='#scroll') Learn More
 
-  h1 Encuesta de satisfacción del cliente
+    .bg-circle-1.bg-circle
+    .bg-circle-2.bg-circle
+    .bg-circle-3.bg-circle
+    .bg-circle-4.bg-circle
+  // Resto del contenido
+  // Content section 1
+  section#scroll
+    .container.px-5
+      .row.gx-5.align-items-center
+        .col-lg-6.order-lg-2
+          .p-5
+            img.img1-fluid.rounded-circle(src='images/online-survey.webp', alt='...')
+        .col-lg-6.order-lg-1
+          .p-5
+            h2.display-4 Para Aquellos Sobre BlackInk
+            p
+              | Tu pagina para crear cuestionarios de manera gratuita y facil.
+  // Content section 2
+  section
+    .container.px-5
+      .row.gx-5.align-items-center
+        .col-lg-6
+          .p-5
+            img.img-fluid.rounded-circle(src='images/salute.jpg', alt='...')
+        .col-lg-6
+          .p-5
+            h2.display-4 Bienvenido Querido Usuario!
+            p
+              | Te damos una calidad bienvenida a la pagina de BlackInk, tu mejor pagina gratis y facil de usar.
+  // Content section 3
+  section
+    .container.px-5
+      .row.gx-5.align-items-center
+        .col-lg-6.order-lg-2
+          .p-5
+            img.img2-fluid.rounded-circle(src='images/picture3.png', alt='...')
+        .col-lg-6.order-lg-1
+          .p-5
+            h2.display-4 Mas Sobre BlackInk
+            p
+              | BlackInk es una plataforma moderna y amigable para crear, distribuir y graficar encuestas.
+  // Footer
+  footer.py-5.bg-black
+    .container.px-5
+      p.m-0.text-center.text-white.small Copyright &copy; Your Website 2023
 
-  form(action="/submit-survey" method="post" class="survey-form")
+  section#scroll
+    .container.px-5
+      .row.gx-5.align-items-center
+        .col-lg-6.order-lg-2
+          .p-5
+            img.img3-fluid.rounded-circle(src='images/survey.jpg', alt='...')
+        .col-lg-6.order-lg-1
+          .p-5
+            h2.display-4 Calificación De Encuestas
+            p
+              | Cuentame sobre tu experiencia por usar BlankInk, tu pagina para crear encuestas.
+    // Content section 2
+  section
+    .container.px-5
+      .row.gx-5.align-items-center
+        .col-lg-6
+          .p-5
+            img.img4-fluid.rounded-circle(src='images/login.webp', alt='...')
+        .col-lg-6
+          .p-5
+            h2.display-4 Sistema de Inicio de Sesión
+            p
+              | Para poder usar BlackInk es necesario registrar una cuenta  y asi poder crear tu propia encuesta (para registrar una cuenta ubica el Sign Up que se encuentra en la parte superior de lado derecho de la pagina de inicio.)
 
-    h2 ¿Cuál es tu color favorito?
-    label.radio-label
-      input(type="radio" name="favorite_color" value="red" required)
-      | Rojo
-    br
-    label.radio-label
-      input(type="radio" name="favorite_color" value="blue" required)
-      | Azul
-    br
-    label.radio-label
-      input(type="radio" name="favorite_color" value="green" required)
-      | Verde
-    br
-    label.radio-label
-      input(type="radio" name="favorite_color" value="yellow" required)
-      | Amarillo
-    br
-
-    h2 ¿Cuán satisfecho estás con nuestro servicio?
-    table.likert-table
-      tr
-        th.likert-header Muy insatisfecho
-        th.likert-header Insatisfecho
-        th.likert-header Neutral
-        th.likert-header Satisfecho
-        th.likert-header Muy satisfecho
-      tr
-        td
-          input(type="radio" name="satisfaction" value="1" required aria-label="Muy insatisfecho")
-        td
-          input(type="radio" name="satisfaction" value="2" required aria-label="Insatisfecho")
-        td
-          input(type="radio" name="satisfaction" value="3" required aria-label="Neutral")
-        td
-          input(type="radio" name="satisfaction" value="4" required aria-label="Satisfecho")
-        td
-          input(type="radio" name="satisfaction" value="5" required aria-label="Muy satisfecho")
-    br
-
-    h2 ¿Cuál es tu opinión sobre nuestro servicio?
-    textarea(name="opinion" rows="5" cols="40" placeholder="Escribe tu opinión aquí" class="textarea-opinion")
-    br
-
-    input(type="submit" value="Enviar" class="submit-button")
+  // Footer
+  footer.py-5.bg-black
+    .container.px-5
+      p.m-0.text-center.text-white.small Copyright &copy; Your Website 2023

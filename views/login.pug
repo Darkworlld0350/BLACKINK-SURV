@@ -1,0 +1,77 @@
+extends layout
+
+block content
+  section.vh-100
+    .container-fluid.h-custom
+      .row.d-flex.justify-content-center.align-items-center.h-100
+        .col-md-9.col-lg-6.col-xl-5
+          img.img-fluid(src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" alt="Sample image")
+        .col-md-8.col-lg-6.col-xl-4.offset-xl-1
+          // Pills navs
+          ul.nav.nav-pills.nav-justified.mb-5#ex1(role="tablist")
+            li.nav-item(role="presentation")
+              a.nav-link.active#tab-login(data-bs-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true") Login
+            li.nav-item(role="presentation")
+              a.nav-link#tab-register(data-bs-toggle="pill" href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false") Register
+          // Pills content
+          .tab-content
+            .tab-pane.fade.show.active#pills-login(role="tabpanel" aria-labelledby="tab-login")
+              form(action='/login', method='POST')
+                .text-center.mb-3
+                // Email input
+                .form-outline.mb-4
+                  input#loginName.form-control(type="email" name="email" placeholder="Enter a valid email address")
+                  label.form-label(for="loginName") Email
+                // Password input
+                .form-outline.mb-4
+                  input#loginPassword.form-control(type="password" name="password" placeholder="Enter password")
+                  label.form-label(for="loginPassword") Password
+                // 2 column grid layout
+                .row.mb-4
+                  .col-md-6.d-flex.justify-content-center
+                    // Checkbox
+                    .form-check.mb-3.mb-md-0
+                      input#loginCheck.form-check-input(type="checkbox" value="remember-me" checked)
+                      label.form-check-label(for="loginCheck") Remember me
+                  .col-md-6.d-flex.justify-content-center
+                // Submit button
+                button.btn.btn-primary.btn-block.mb-4(type="submit") Sign in
+                // Register buttons
+                .text-center
+                  p Not a member? 
+                    a(href="#pills-register" data-bs-toggle="pill" role="tab" aria-controls="pills-register" aria-selected="false") Register
+            .tab-pane.fade#pills-register(role="tabpanel" aria-labelledby="tab-register")
+              form(action='/registrar-usuario', method='POST')
+                .text-center.mb-3
+                // Name input
+                .form-outline.mb-4
+                  input#registerName.form-control(type="text" name="nombre" placeholder="Name")
+                  label.form-label(for="registerName") Name
+                // Username input
+                .form-outline.mb-4
+                  input#registerUsername.form-control(type="text" name="usuario" placeholder="Username")
+                  label.form-label(for="registerUsername") Username
+                // Email input
+                .form-outline.mb-4
+                  input#registerEmail.form-control(type="email" name="email" placeholder="Email")
+                  label.form-label(for="registerEmail") Email
+                // Password input
+                .form-outline.mb-4
+                  input#registerPassword.form-control(type="password" name="password" placeholder="Password")
+                  label.form-label(for="registerPassword") Password
+                // Repeat Password input
+                .form-outline.mb-4
+                  input#registerRepeatPassword.form-control(type="password" name="confirmPassword" placeholder="Repeat password")
+                  label.form-label(for="registerRepeatPassword") Repeat password
+                // Checkbox
+                .form-check.d-flex.justify-content-center.mb-4
+                  input#registerCheck.form-check-input.me-2(type="checkbox" value="" checked aria-describedby="registerCheckHelpText")
+                  label.form-check-label(for="registerCheck")
+                    | I have read and agree to the terms
+                // Submit button
+                button.btn.btn-primary.btn-block.mb-3(type="submit") Sign up
+
+  .d-flex.flex-column.flex-md-row.text-center.text-md-start.justify-content-between.py-4.px-4.px-xl-5.bg-primary
+    // Copyright
+    .text-white.mb-3.mb-md-0
+      | Copyright © 2020. All rights reserved.

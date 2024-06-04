@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .col.col-lg-6.mb-4.mb-lg-0
+    .profile-section.gradient-custom
+      .profile-picture
+        img(src="images/perfil.jpg", alt="Profile Picture")
+      h5.nombre #{user.nombre}
+      .title Web Designer
+      .edit-icon 🖉
+    .info-section
+      .section-title Information
+      .info-item
+        .label User
+        .value #{user.usuario}
+      .info-item
+        .label Email
+        .value #{user.email}
+      .section-title Projects
+      .info-item
+        .label Recent
+        .value None

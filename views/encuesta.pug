@@ -1,0 +1,59 @@
+extends layout
+
+block content
+  .container
+    .d-flex.justify-content-between.align-items-center.mb-4
+      h1 Mis Encuestas
+      button.btn.btn-primary(type="button", data-bs-toggle="modal", data-bs-target="#createSurveyModal") Crear nueva encuesta
+
+    // Modal para crear nuevas encuestas
+    .modal.fade(id="createSurveyModal", tabindex="-1", aria-labelledby="createSurveyModalLabel", aria-hidden="true")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h5.modal-title(id="createSurveyModalLabel") Crear Encuesta
+            button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+          .modal-body
+            form(action="/encuestas" method="POST")
+              .mb-3
+                label(for="titulo" class="form-label") Título
+                input#titulo.form-control(type="text" name="titulo" required)
+              .mb-3
+                label(for="descripcion" class="form-label") Descripción
+                textarea#descripcion.form-control(name="descripcion" rows="3" required)
+              .mb-3
+                label(for="fechaInicio" class="form-label") Fecha de Inicio
+                input#fechaInicio.form-control(type="date" name="fechaInicio" required)
+              .mb-3
+                label(for="fechaCreacion" class="form-label") Fecha de creacion
+                input#fechaFin.form-control(type="date" name="fechaFin" required)
+              .modal-footer
+                button.btn.btn-secondary(type="button", data-bs-dismiss="modal") Cerrar
+                button.btn.btn-primary(type="submit") Guardar cambios
+
+    #surveyContainer.row
+      if !encuestas.length
+        .col-12
+          p No hay encuestas para mostrar
+      else
+        each encuesta in encuestas
+          .col-md-4.mb-4
+            .card.h-100
+              .card-body.d-flex.flex-column.justify-content-between
+                h5.card-title= encuesta.titulo
+                p.card-text= encuesta.descripcion
+                p.card-text
+                  small.text-muted Fecha de inicio: #{new Date(encuesta.fecha_inicio).toLocaleDateString()}
+                p.card-text
+                  small.text-muted Fecha de fin: #{new Date(encuesta.fecha_fin).toLocaleDateString()}
+                .mt-auto
+                  .d-flex.justify-content-between
+                    a.btn.btn-secondary(href=`/encuestas/${encuesta.id}`) Ver Encuesta
+                    a.btn.btn-secondary.me-2(href=`/encuestas/editar/${encuesta.id}`) Editar
+                    a.btn.btn-danger(href=`/encuestas/eliminar/${encuesta.id}`) Eliminar
+
+  script.
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('fechaInicio').value = today;
+    });

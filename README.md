@@ -17,3 +17,6 @@ git pull origin main
 
 #Enviar tus cambios al repositorio remoto en GitHub
 git push origin main
+
+#Puede solamente usar npm install para que se le instalen todas las dependencias sin problema alguno
+npm install
